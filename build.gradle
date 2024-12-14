@@ -23,9 +23,35 @@ dependencies {
     implementation ('io.github.bonigarcia:webdrivermanager:5.9.2') {
         exclude group: 'com.google.guava', module: 'guava'
     }
-    testImplementation 'org.testng:testng:7.9.0'
+    testImplementation 'org.testng:testng:7.7.0'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
 }
 
 test {
     useTestNG()
 }
+
+//plugins {
+//    id 'java'
+//    id 'application'
+//    id 'idea'
+//}
+//
+//java {
+//    sourceCompatibility = JavaVersion.VERSION_11
+//    targetCompatibility = JavaVersion.VERSION_11
+//}
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+//dependencies {
+//    implementation 'org.seleniumhq.selenium:selenium-java:4.26.0'
+//    implementation 'io.github.bonigarcia:webdrivermanager:5.9.2'
+//    testImplementation 'org.testng:testng:7.9.0'
+//}
+//
+//test {
+//    useTestNG()
+//}
