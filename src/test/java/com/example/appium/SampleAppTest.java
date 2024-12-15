@@ -8,6 +8,7 @@ import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -29,7 +30,7 @@ public class SampleAppTest {
         if (platform.equals("ANDROID")) {
             var options = new UiAutomator2Options()
                     .setPlatformName("Android")
-                    .setDeviceName("PUT_YOUR_DEVICE_NAME_HERE")
+                    .setDeviceName("emulator-5554")
                     .setApp(Paths.get(path).resolve("ApiDemos-debug.apk").toString());
 
             server = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingAnyFreePort());
@@ -53,9 +54,11 @@ public class SampleAppTest {
 
     @Test
     public void textFieldTest() {
-        // TODO initialise PageView and set "text" to its textField
-
-        // TODO assert that textField equals to "text"
+        // Initialise PageView and set "text" to its textField
+        PageView view = new PageView ( driver );
+        view.setTextField ( "test" );
+        //  Assert that textField equals to "text"
+        Assert.assertEquals ( view.getTextField (), "test", "Text field was not set" );
     }
 
     @AfterClass
