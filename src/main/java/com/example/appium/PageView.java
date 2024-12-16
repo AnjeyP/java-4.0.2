@@ -13,10 +13,10 @@ public class PageView {
     private final AppiumDriver driver;
 
     // Define textField WebElement using @FindBy annotations for iOS and Android
-    @AndroidFindBy(id = "io.appium.android.apis:id/edit") // Replace with the actual Android ID
+    @AndroidFindBy(id = "edit") // Replace with the actual Android ID
     private WebElement androidTextField;
 
-    @iOSXCUITFindBy(accessibility = "textFieldAccessibilityLabel") // Replace with the actual Accessibility ID for iOS
+    @iOSXCUITFindBy(accessibility = "IntegerA") // Replace with the actual Accessibility ID for iOS found via Appium Studio
     private WebElement iosTextField;
 
     public PageView(AppiumDriver driver) {
